@@ -9,10 +9,19 @@ const notes = require('./notes.js')
 const argv = yargs.argv
 var command = argv._[0];
 console.log('Command: ', command);
+console.log('Process: ', process.argv)
 console.log('Yargs: ', argv)
 
 if (command === 'add') {
-	notes.addNote(argv.title, argv.body);
+	var note = notes.addNote(argv.title, argv.body);
+	if (note) {
+		console.log("node created.")
+		console.log("--")
+		console.log(`Title: ${note.title}`);
+		console.log(`Body: ${note.body}`);
+	} else {
+		console.log("Node title taken");
+	}
 
 } else if (command === 'list') {
 	
