@@ -233,6 +233,7 @@ module.exports = {
         "yoda": [
             "error",
             "never"
-        ]
+        ],
+				"no-console": 0
     }
 };
